@@ -11,10 +11,6 @@ function findSuitableOrders(driverRoute, orders) {
     let distanceToOrder = calculateDistance(driverRoute.A, order.A);
     let distanceFromOrder = calculateDistance(driverRoute.B, order.B);
     let driverAndOrderDistance = distanceToOrder + orderDistance + distanceFromOrder;
-  
-    if (driverAndOrderDistance < shortestDistance) {
-      shortestDistance = driverAndOrderDistance;
-      closestOrder = order;
     }
   }
   
