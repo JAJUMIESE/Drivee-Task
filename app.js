@@ -1,10 +1,4 @@
 function findSuitableOrders(driverRoute, orders) {
-
-  // Создаем массив для хранения подходящих заказов
-  let suitableOrders = [];
-
-  let shortestDistance = Infinity; // Инициализируем переменную shortestDistance с бесконечным значением
-  let closestOrder = null; // Инициализируем переменную closestOrder как пустую
   
   for (let order of orders) {
     let orderDistance = calculateDistance(order.A, order.B);
