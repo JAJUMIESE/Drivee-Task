@@ -1,14 +1,6 @@
 function findSuitableOrders(driverRoute, orders) {
   
-  for (let order of orders) {
-    let orderDistance = calculateDistance(order.A, order.B);
-    let distanceToOrder = calculateDistance(driverRoute.A, order.A);
-    let distanceFromOrder = calculateDistance(driverRoute.B, order.B);
-    let driverAndOrderDistance = distanceToOrder + orderDistance + distanceFromOrder;
-    }
-  }
-  
-  // Отсортировать массив заказов по driverAndOrderDistance
+  // Отсортировать массив заказов 
   orders.sort(function(a, b) {
     let distanceA = calculateDistance(a.A, a.B) + calculateDistance(driverRoute.A, a.A) + calculateDistance(driverRoute.B, a.B);
     let distanceB = calculateDistance(b.A, b.B) + calculateDistance(driverRoute.A, b.A) + calculateDistance(driverRoute.B, b.B);
@@ -34,9 +26,9 @@ function calculateDistance(point1, point2) {
 // Пример использования
 let driverRoute = { A: { x: 0, y: 0 }, B: { x: 10, y: 10 } };
 let orders = [
-  { A: { x: 2, y: 2 }, B: { x: 5, y: 8 } },
-  { A: { x: 8, y: 8 }, B: { x: 12, y: 11 } },
-  { A: { x: 3, y: 3 }, B: { x: 7, y: 10 } }
+  { A: { x: 11, y: 10 }, B: { x: 5, y: 8 } },
+  { A: { x: 1, y: 2 }, B: { x: 10, y: 11 } },
+  { A: { x: 5, y: 3 }, B: { x: 7, y: 10 } }
 ];
 
 findSuitableOrders(driverRoute, orders);
